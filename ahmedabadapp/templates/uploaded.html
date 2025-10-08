@@ -1,0 +1,851 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmedabad Subah E-News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="{% static 'img/AL.png' %}" type="image/x-icon">
+    <style>
+        :root {
+            --primary-color: #e6753d;
+            --secondary-color: #f0ed3f;
+            --accent-color: #2c3e50;
+            --text-color: #333;
+            --light-text: #777;
+            --light-bg: #f9f9f9;
+            --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff8ee, #fff9e6);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px 30px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 50px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+            transition: var(--transition);
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+        }
+
+        .site-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--accent-color);
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .site-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        nav a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content Styles */
+        .main-container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 30px;
+        }
+
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--border-radius);
+            padding: 30px 40px;
+            color: white;
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="rgba(255,255,255,0.1)" d="M30.87 65.17c-8.36 5.6-8.36 14.68 0 20.28 8.35 5.6 21.9 5.6 30.26 0 8.35-5.6 8.35-14.68 0-20.28-8.36-5.6-21.9-5.6-30.26 0zm30.26-30.52c-8.36 5.6-8.36 14.68 0 20.28 8.35 5.6 21.9 5.6 30.26 0 8.35-5.6 8.35-14.68 0-20.28-8.36-5.6-21.9-5.6-30.26 0zm-60.52 0c-8.36 5.6-8.36 14.68 0 20.28 8.35 5.6 21.9 5.6 30.26 0 8.35-5.6 8.35-14.68 0-20.28-8.36-5.6-21.9-5.6-30.26 0zm30.26-30.52c-8.36 5.6-8.36 14.68 0 20.28 8.35 5.6 21.9 5.6 30.26 0 8.35-5.6 8.35-14.68 0-20.28-8.36-5.6-21.9-5.6-30.26 0z"/></svg>');
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            z-index: 1;
+        }
+
+        .hero-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .hero-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            font-weight: 200;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-image {
+            max-width: 300px;
+            z-index: 1;
+        }
+
+        /* Controls Section */
+        .controls-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .date-filter {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .date-filter label {
+            margin-right: 10px;
+            font-weight: 500;
+        }
+
+        .date-filter input[type="date"] {
+            border: 1px solid #e0e0e0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .date-filter button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .date-filter button:hover {
+            background-color: #d86531;
+            transform: translateY(-2px);
+        }
+
+        .year-filter {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .year-filter label {
+            margin-right: 10px;
+            font-weight: 500;
+        }
+
+        .year-filter select {
+            padding: 8px 30px 8px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 16px;
+        }
+
+        /* Content Sections */
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        /* PDF Card Styles */
+        .pdf-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .pdf-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .pdf-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .pdf-header {
+            padding: 20px 20px 15px;
+            background-color: var(--light-bg);
+            border-bottom: 1px solid #eee;
+        }
+
+        .pdf-icon {
+            background-color: #f8f0e5;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .pdf-icon i {
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+
+        .pdf-title {
+            font-weight: 600;
+            font-size: 17px;
+            margin-bottom: 5px;
+            line-height: 1.4;
+            color: var(--accent-color);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .pdf-date {
+            color: var(--light-text);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .pdf-date i {
+            margin-right: 5px;
+            font-size: 12px;
+        }
+
+        .pdf-actions {
+            padding: 15px 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .pdf-btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            flex: 1;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .view-btn {
+            background-color: #e8f4fe;
+            color: #2196f3;
+        }
+
+        .view-btn:hover {
+            background-color: #d3eafd;
+            transform: translateY(-2px);
+        }
+
+        .download-btn {
+            background-color: #e6f7ed;
+            color: #27ae60;
+        }
+
+        .download-btn:hover {
+            background-color: #d5f2e3;
+            transform: translateY(-2px);
+        }
+
+        /* Video Card Styles */
+        .video-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .video-header {
+            padding: 20px 20px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .video-date {
+            color: var(--light-text);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .video-date i {
+            margin-right: 5px;
+        }
+
+        .video-badge {
+            background-color: #ffe8e8;
+            color: #e74c3c;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .video-badge i {
+            margin-right: 5px;
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap; /* Wraps to next row if space runs out */
+            gap: 20px;        /* Space between videos */
+            justify-content: flex-start; /* Align videos to the left */
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .video-item {
+            flex: 0 0 auto; /* Prevent items from stretching */
+            width: 360px;   /* Fixed width like iframe */
+}
+
+        /* Year Section Styles */
+        .year-section {
+            margin-bottom: 60px;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .year-heading {
+            font-size: 34px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--accent-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .year-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 3px;
+        }
+
+        .year-content {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            padding: 30px;
+        }
+
+        .subsection-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 25px 0 20px;
+            color: var(--accent-color);
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .subsection-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+        }
+
+        .empty-icon {
+            font-size: 60px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .empty-message {
+            color: var(--light-text);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer-container {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+          }
+
+          .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+          }
+
+          {% comment %} .footer-logo {
+            padding: 10px 0;
+          } {% endcomment %}
+
+          .logo-image {
+            width: 250px;
+            height: 80px;
+            object-fit: contain;
+          }
+
+          .footer-navigation {
+            margin-left: 20px;
+          }
+
+          .main-links {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+
+          .main-links li {
+            margin: 0 15px;
+          }
+
+          .main-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+          }
+
+          .main-links a:hover {
+            color: #0066cc;
+          }
+
+          .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+          }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px;
+            }
+
+            .hero-content {
+                margin-bottom: 20px;
+            }
+
+            .hero-heading {
+                font-size: 28px;
+            }
+
+            .controls-section {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .date-filter, .year-filter {
+                width: 100%;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .pdf-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="{% static 'img/as logo.jpg' %}" alt="Ahmedabad Subah Logo" class="logo-img">
+                <h1 class="site-title">Ahmedabad Subah E-News</h1>
+            </div>
+           {% comment %} <nav>
+                <a href="#home"><i class="fas fa-home"></i> Home</a>
+                <a href="#"><i class="fas fa-newspaper"></i> News</a>
+                <a href="#"><i class="fas fa-file-upload"></i> Upload</a>
+                <a href="#"><i class="fas fa-address-book"></i> Contact</a>
+            </nav> {% endcomment %}
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <h2 class="hero-heading">Your Daily Dose of Ahmedabad News</h2>
+                <p class="hero-text">Stay informed with the latest news, updates, and happenings around Ahmedabad. Access our comprehensive collection of newspapers and video reports.</p>
+                {% comment %} <a href="#" class="hero-btn">Latest Headlines</a> {% endcomment %}
+            </div>
+            {% comment %} <img src="{% static 'img/news.jpg' %}" alt="News Illustration" class="hero-image"> {% endcomment %}
+        </div>
+
+        <!-- Controls Section -->
+        <div class="controls-section">
+          <form method="GET" style="display: inline-block;">
+            <div class="date-filter">
+                <label for="date"><i class="far fa-calendar-alt"></i> Select Date:</label>
+                <input type="date" id="date" name="date" value="{{ selected_date }}">
+                <button type="submit">Filter</button>
+            </div>
+          </form>
+            <div class="year-filter">
+                <label for="yearFilter"><i class="fas fa-filter"></i> Filter by year:</label>
+                <select id="yearFilter">
+                    <option value="all">All Years</option>
+                    {% for entry in yearwise_list %}
+                    <option value="year-{{ entry.year }}">{{ entry.year }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+<div class="container">
+  {% for entry in pdf_grouped %}
+    <div class="year-section" id="year-{{ entry.label|slice:'-4:' }}">
+      <div class="year-content">
+        <h2 class="section-title">
+          {% if forloop.first %}Latest E-Newspapers{% else %}{{ entry.label }}{% endif %}
+        </h2>
+
+        {% if entry.items %}
+          <h3 class="subsection-title">PDFs</h3>
+          <div class="grid-container">
+            {% for item in entry.items %}
+              <div class="pdf-card">
+                <div class="pdf-header">
+                  <div class="pdf-icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </div>
+                  <h3 class="pdf-title">{{ item.pdf_file.name|cut:'uploads/pdfs/' }}</h3>
+                  <div class="pdf-date">
+                    <i class="far fa-calendar-alt"></i> {{ item.date|date:"M. d, Y" }}
+                  </div>
+                </div>
+                {% comment %} <div class="pdf-actions">
+                  <a href="{{ item.pdf_file.url }}" target="_blank" class="pdf-btn view-btn"><i class="far fa-eye"></i> View</a>
+                  <a href="{{ item.pdf_file.url }}" class="pdf-btn download-btn" download><i class="fas fa-download"></i> Download</a>
+                </div> {% endcomment %}
+
+                <div class="pdf-actions">
+                    {% if item.pdf_file %}
+                        <a href="{{ item.pdf_file.url }}" target="_blank" class="pdf-btn view-btn"><i class="far fa-eye"></i> View</a>
+                        <a href="{{ item.pdf_file.url }}" class="pdf-btn download-btn" download><i class="fas fa-download"></i> Download</a>
+                    {% else %}
+                        <p class="text-danger">No PDF uploaded</p>
+                    {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <!-- YouTube Section -->
+        {% comment %} <h2>YouTube Videos</h2>
+        <div class="video-container">
+          {% for video in youtube_videos %}
+            <div class="video-item">
+              <iframe width="360" height="215" src="{{ video.get_youtube_embed_url }}" frameborder="0" allowfullscreen></iframe>
+              <p>{{ video.video_title }}</p>
+              <p>Published: {{ video.published_at }}</p>
+            </div>
+          {% empty %}
+            <p>No videos available.</p>
+          {% endfor %}
+        </div> {% endcomment %}
+
+        {% if entry.videos %}
+        <h2>YouTube Videos</h2>
+        <div class="video-container">
+            {% for video in entry.videos %}
+            <div class="video-item">
+                <iframe width="360" height="215" src="{{ video.get_youtube_embed_url }}" frameborder="0" allowfullscreen></iframe>
+                <p>{{ video.video_title }}</p>
+                <p>Published: {{ video.published_at|date:"M. d, Y" }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+    </main>
+    <footer>
+        <div class="footer-container">
+          <div class="footer-content">
+            <!-- Company Logo -->
+            <div class="footer-logo">
+              <img src="{% static 'img/as logo.jpg' %}"  alt="Ahmedabad Subah E-News Logo" class="logo-image" />
+            </div>
+
+            <!-- Main Links -->
+            <div class="footer-navigation">
+              <ul class="main-links">
+                <li><a href="#" class="news-link">News</a></li>
+                <li><a href="#" class="videos-link">Videos</a></li>
+                {% comment %} <li><a href="#" class="latest-link">Latest</a></li> {% endcomment %}
+              </ul>
+            </div>
+          </div>
+
+          <div class="copyright">
+            &copy; 2024 Ahmedabad Subah E-News
+          </div>
+        </div>
+      </footer>
+
+    <!-- JavaScript for Filtering -->
+    <script>
+        // Year filter functionality
+        const filter = document.getElementById("yearFilter");
+        const sections = document.querySelectorAll(".year-section");
+
+        function updateSections() {
+            const selected = filter.value;
+            sections.forEach((section) => {
+                section.style.display = selected === "all" || section.id === selected ? "block" : "none";
+            });
+        }
+
+        // Initial call
+        updateSections();
+        filter.addEventListener("change", updateSections);
+
+        // Date filter functionality (for demonstration)
+        const dateFilter = document.querySelector(".date-filter button");
+        const emptyState = document.querySelector(".empty-state");
+
+        dateFilter.addEventListener("click", function() {
+            const dateInput = document.getElementById("date").value;
+            // This is just for demonstration - in a real app you'd check if there's content for this date
+            // For now let's just randomly show the empty state sometimes
+            if (Math.random() > 0.7) {
+                sections.forEach(section => section.style.display = "none");
+                emptyState.style.display = "block";
+            } else {
+                updateSections();
+                emptyState.style.display = "none";
+            }
+        });
+    </script>
+  </body>
+  </html>

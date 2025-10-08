@@ -1,0 +1,699 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmedabad Subah E-Newspaper | Upload Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'img/AL.png' %}" type="image/x-icon">
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background: linear-gradient(135deg, #f6f9fc 0%, #edf2f7 100%);
+        color: #2a2a2a;
+        min-height: 100vh;
+        opacity: 0;
+        animation: fadeInPage 1.2s forwards;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      @keyframes fadeInPage {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      /* Header Styles */
+      .site-header {
+        background: #fff;
+        padding: 15px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 100;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transform: translateY(-100%);
+        animation: slideInHeader 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s forwards;
+      }
+
+      @keyframes slideInHeader {
+        to { transform: translateY(0); }
+      }
+      
+      .brand {
+        display: flex;
+        align-items: center;
+      }
+      
+      .logo {
+        height: 50px;
+        margin-right: 15px;
+        transform: scale(0);
+        animation: popInLogo 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.9s forwards;
+      }
+      
+      @keyframes popInLogo {
+        0% { transform: scale(0); }
+        80% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+      }
+      
+      .site-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: rgb(248, 137, 68);
+        margin: 0;
+        opacity: 0;
+        animation: fadeIn 0.8s ease 1s forwards;
+      }
+      
+      @keyframes fadeIn {
+        to { opacity: 1; }
+      }
+      
+      .main-nav ul {
+        display: flex;
+        list-style: none;
+      }
+      
+      .nav-link {
+        position: relative;
+        margin-left: 2rem;
+        font-weight: 500;
+        text-decoration: none;
+        color: #2a2a2a;
+        padding: 8px 0;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: slideUpFadeIn 0.5s ease forwards;
+      }
+      
+      .nav-link:nth-child(1) { animation-delay: 1.1s; }
+      .nav-link:nth-child(2) { animation-delay: 1.2s; }
+      
+      @keyframes slideUpFadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background:rgb(248, 137, 68);
+        transition: width 0.3s ease;
+      }
+      
+      .nav-link:hover {
+        color: rgb(248, 137, 68);
+      }
+      
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      
+      /* Main Content Styles */
+      .page-content {
+        padding: 2rem 5%;
+      }
+      
+      .upload-container {
+        max-width: 550px;
+        margin: 2rem auto 4rem;
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transform: translateY(50px);
+        opacity: 0;
+        animation: floatIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.6s forwards;
+      }
+
+      @keyframes floatIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .container-header {
+        background:rgb(248, 137, 68);
+        padding: 1.5rem;
+        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .container-header::before {
+        content: '';
+        position: absolute;
+        width: 150%;
+        height: 100px;
+        background: rgba(255, 255, 255, 0.1);
+        transform: rotate(45deg);
+        top: -80px;
+        left: -50%;
+        animation: shineEffect 3s infinite linear;
+      }
+
+      @keyframes shineEffect {
+        0% { transform: translateX(-100%) rotate(45deg); }
+        100% { transform: translateX(100%) rotate(45deg); }
+      }
+
+      .container-header h2 {
+        font-family: 'Playfair Display', serif;
+        margin: 0;
+        font-size: 1.8rem;
+        font-weight: 700;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideUpHeader 0.8s ease 1.2s forwards;
+      }
+
+      @keyframes slideUpHeader {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .upload-form {
+        padding: 2rem;
+      }
+      
+      .form-messages {
+        margin-bottom: 1.5rem;
+      }
+
+      .error-message {
+        background-color: rgba(255, 23, 68, 0.08);
+        border-left: 4px solid #ff1744;
+        color: #ff1744;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        animation: shakeError 0.6s cubic-bezier(.36,.07,.19,.97) both;
+      }
+      
+      @keyframes shakeError {
+        10%, 90% { transform: translate3d(-1px, 0, 0); }
+        20%, 80% { transform: translate3d(2px, 0, 0); }
+        30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+        40%, 60% { transform: translate3d(4px, 0, 0); }
+      }
+      
+      .success-message {
+        background-color: rgba(0, 200, 83, 0.08);
+        border-left: 4px solid #00c853;
+        color: #00c853;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        opacity: 0;
+        animation: fadeInUp 0.5s ease forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+        opacity: 0;
+        transform: translateX(-20px);
+        animation: slideInField 0.5s ease forwards;
+      }
+
+      .form-group:nth-of-type(1) { animation-delay: 1.3s; }
+      .form-group:nth-of-type(2) { animation-delay: 1.4s; }
+      .form-group:nth-of-type(3) { animation-delay: 1.5s; }
+
+      @keyframes slideInField {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #2a2a2a;
+      }
+      
+      .date-input {
+        width: 100%;
+        padding: 12px;
+        font-family: 'Montserrat', sans-serif;
+        border: 2px solid #e1e5eb;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background-color: #f8fafc;
+      }
+      
+      .date-input:focus {
+        border-color: rgb(248, 137, 68);
+        box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+        outline: none;
+      }
+      
+      .file-upload-container {
+        position: relative;
+        padding: 2rem;
+        border: 2px dashed #e1e5eb;
+        border-radius: 8px;
+        text-align: center;
+        transition: all 0.3s ease;
+        background-color: #f8fafc;
+        overflow: hidden;
+      }
+      
+      .file-upload-container:hover {
+        border-color: rgb(248, 137, 68);
+        background-color: rgba(26, 115, 232, 0.05);
+      }
+      
+      .file-upload-label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        color: #2a2a2a;
+      }
+      
+      .file-upload-input {
+        width: 100%;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+        color: #2a2a2a;
+        transition: all 0.3s ease;
+      }
+
+      .file-upload-input::file-selector-button {
+        padding: 8px 16px;
+        background: rgb(248, 137, 68);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        cursor: pointer;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .file-upload-input::file-selector-button:hover {
+        background: rgb(248, 137, 68);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(26, 115, 232, 0.2);
+      }
+      
+      .submit-button {
+        width: 100%;
+        padding: 14px;
+        background:rgb(248, 137, 68);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 10px rgba(26, 115, 232, 0.2);
+        position: relative;
+        overflow: hidden;
+        margin-top: 1rem;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInButton 0.6s ease 1.6s forwards;
+      }
+
+      @keyframes fadeInButton {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .submit-button:hover {
+        background: rgb(248, 137, 68);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(26, 115, 232, 0.3);
+      }
+      
+      .submit-button:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 5px rgba(26, 115, 232, 0.2);
+      }
+      
+      .submit-button::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 255, 255, 0.5);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%, -50%);
+        transform-origin: 50% 50%;
+      }
+      
+      .submit-button:focus:not(:active)::after {
+        animation: ripple 1s ease-out;
+      }
+      
+      @keyframes ripple {
+        0% {
+          transform: translate(-50%, -50%) scale(0);
+          opacity: 0.8;
+        }
+        80% {
+          transform: translate(-50%, -50%) scale(30);
+          opacity: 0.2;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(40);
+          opacity: 0;
+        }
+      }
+      
+      .loading-spinner {
+        display: none;
+        margin: 1.5rem auto 0;
+        width: 40px;
+        height: 40px;
+        position: relative;
+      }
+      
+      .loading-spinner::before {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: rgb(248, 137, 68);
+        border-bottom-color: #f50057;
+        animation: spinnerRotate 1s linear infinite;
+      }
+      
+      @keyframes spinnerRotate {
+        to { transform: rotate(360deg); }
+      }
+      
+      form.submitting .loading-spinner {
+        display: block;
+      }
+      
+      form.submitting .submit-button {
+        opacity: 0.7;
+        pointer-events: none;
+      }
+      
+      .view-files-link {
+        display: block;
+        text-align: center;
+        margin-top: 1.5rem;
+        text-decoration: none;
+        color:rgb(248, 137, 68);
+        font-weight: 500;
+        position: relative;
+        padding: 5px 0;
+        transition: all 0.3s ease;
+        opacity: 0;
+        animation: fadeIn 0.5s ease 1.7s forwards;
+      }
+      
+      .view-files-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background:rgb(248, 137, 68);
+        transition: all 0.3s ease;
+      }
+      
+      .view-files-link:hover {
+        color: #f50057;
+      }
+      
+      .view-files-link:hover::after {
+        width: 100%;
+        background: #f50057;
+      }
+
+      /* Responsive Styles */
+      @media screen and (max-width: 768px) {
+        .site-header {
+          flex-direction: column;
+          padding: 15px;
+        }
+        
+        .brand {
+          margin-bottom: 10px;
+        }
+        
+        .site-title {
+          font-size: 1.5rem;
+        }
+        
+        .nav-link {
+          margin-left: 1rem;
+          font-size: 0.9rem;
+        }
+        
+        .upload-container {
+          margin: 1rem 10px;
+        }
+        
+        .container-header h2 {
+          font-size: 1.5rem;
+        }
+        
+        .upload-form {
+          padding: 1.5rem 1rem;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .site-title {
+          font-size: 1.2rem;
+        }
+        
+        .logo {
+          height: 40px;
+        }
+        
+        .nav-link {
+          margin-left: 0.8rem;
+          font-size: 0.8rem;
+        }
+        
+        .container-header h2 {
+          font-size: 1.3rem;
+        }
+        
+        .file-upload-container {
+          padding: 1.5rem 1rem;
+        }
+      }
+     
+/* ---------------------------Notification Styles------------------------- */
+.notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 1000;
+}
+
+.notification {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 0.5s forwards, fadeOut 0.5s 4s forwards;
+    position: relative;
+}
+
+/* Colors for different message types */
+.success { background-color: #4CAF50; }
+.error { background-color: #f44336; }
+.info { background-color: #2196F3; }
+.warning { background-color: #ff9800; }
+
+/* Slide-in Animation */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(100%); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade-out Animation */
+@keyframes fadeOut {
+    to { opacity: 0; transform: translateX(100%); }
+}
+
+/* Close Button */
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.close-btn:hover {
+    color: black;
+}
+    </style>
+</head>
+
+<!--  Notification POP-UP  -->
+<div class="notification-container" id="notification-container">
+  {% for message in messages %}
+      <div class="notification {{ message.tags }}">
+          <span>{{ message }}</span>
+          {% comment %} <button class="close-btn" onclick="this.parentElement.style.display='none'">×</button> {% endcomment %}
+      </div>
+  {% endfor %}
+</div>
+
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img class="logo" src="{% static 'img/as logo.jpg' %}" alt="Ahmedabad Subah Logo">
+      <h1 class="site-title">Ahmedabad Subah E-News</h1>
+    </div>
+    <!-- <nav class="main-nav">
+      <ul>
+        <li><a class="nav-link" href="#">News Portal</a></li>
+        <li><a class="nav-link" href="#">Archive</a></li>
+      </ul>
+    </nav> -->
+  </header>
+
+  <main class="page-content">
+    <div class="upload-container">
+      <div class="container-header">
+        <h2>Media Upload Portal</h2>
+      </div>
+      
+      <div class="upload-form">
+        {% if error %}
+          <div class="form-messages">
+            <div class="error-message">{{ error }}</div>
+          </div>
+        {% endif %}
+        
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          
+          <div class="form-group">
+            <label class="form-label" for="date-input">Publication Date</label>
+            <input class="date-input" id="date-input" type="date" name="date" required>
+          </div>
+          
+          <div class="form-group">
+            <div class="file-upload-container">
+              <label class="file-upload-label" for="pdf-input">Daily Newspaper (PDF)</label>
+              <input class="file-upload-input" id="pdf-input" type="file" name="pdf_file" accept="application/pdf">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="file-upload-container">
+              <label class="file-upload-label" for="video-input">News Bulletin (Video)</label>
+              <input class="file-upload-input" id="video-input" type="file" name="video_file" accept="video/*">
+            </div>
+          </div>
+          
+          <button type="submit" class="submit-button">Upload Media Files</button>
+          <div class="loading-spinner"></div>
+        </form>
+        
+        <a href="{% url 'uploaded' %}" class="view-files-link">View Previously Uploaded Files</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('form');
+      
+      form.addEventListener('submit', function() {
+        this.classList.add('submitting');
+        
+        // Disable the submit button during form submission
+        const submitButton = this.querySelector('.submit-button');
+        submitButton.disabled = true;
+        submitButton.innerText = 'Uploading...';
+      });
+      
+      // Add visual feedback when files are selected
+      const fileInputs = document.querySelectorAll('.file-upload-input');
+      fileInputs.forEach(input => {
+        input.addEventListener('change', function() {
+          const container = this.closest('.file-upload-container');
+          if (this.files.length > 0) {
+            container.style.borderColor = '#00c853';
+            container.style.backgroundColor = 'rgba(0, 200, 83, 0.05)';
+          } else {
+            container.style.borderColor = '#e1e5eb';
+            container.style.backgroundColor = '#f8fafc';
+          }
+        });
+      });
+    });
+  </script>
+
+<!--Notification POP-UP CODE-->
+<script>
+  // Auto-hide notifications after 5 seconds
+  setTimeout(() => {
+      document.querySelectorAll(".notification").forEach(notification => {
+          notification.style.opacity = "0";
+          setTimeout(() => notification.remove(), 500);
+      });
+  }, 5000);
+</script>
+
+</body>
+</html>

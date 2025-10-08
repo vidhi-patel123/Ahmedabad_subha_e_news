@@ -1,0 +1,261 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Ahmedabad Subha LLP</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+     <!-- Libraries Stylesheet -->
+<link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+<link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+
+<!-- Font Awesome (CDN) -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-dRgVRxYrhQ3vMiKT4wrq2bctu1+ZdzzwXBtJSRZoF3kkKxHvSRt6R6ZKPXhtTVAYfwxGxXdGh9d9vIvZ2zNw0A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+<!-- Template Stylesheet -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet">      
+    </head>
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
+        <div class="container-fluid bg-primary px-5 d-none d-lg-block">
+            <div class="row gx-0 align-items-center">
+                <div class="col-lg-5 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex">
+                    </div>
+                </div>
+                <div class="col-lg-3 row-cols-1 text-center mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid nav-bar p-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                   <h1 class="h4 text-secondary m-0">
+                        <img src="{% static 'img/AL.png' %}" class="img-fluid" alt="">
+                           Ahmedabad Subha LLP
+                    </h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
+                       <a href="{% url 'uploaded' %}" class="nav-item nav-link">E-News</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar & Hero End -->
+
+         <!-- Header Start -->
+ <div class="container-fluid bg-breadcrumb position-relative text-white" style="background-image: url('{% static 'img/background2.jpg' %}'); background-size: cover; background-position: center;">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <img src="{% static 'img/ignite logo1.jpeg' %}" alt="Ignite Digital Logo" style="height: 100px;" class="mb-3 wow fadeInDown" data-wow-delay="0.1s">
+        <h1 class="display-4 fw-bold mb-3 wow fadeInDown" data-wow-delay="0.2s">Ignite Digital</h1>
+        <p class="lead mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            Discover our story, mission, and values that drive Ignite Digital.
+        </p>
+    </div>
+</div>
+        <!-- Header End -->
+
+   <!-- About Start -->
+<div class="container-fluid overflow-hidden py-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
+                <div class="bg-light rounded">
+                    <img src="{% static 'img/maketing.jpg' %}"class="img-fluid w-100 mb-3" alt="Ignite Digital Logo">
+                    <!-- <img src="img/about-ignite.jpg" class="img-fluid w-100 border-bottom border-5 border-primary" style="border-top-right-radius: 300px; border-top-left-radius: 300px;" alt="Ignite Digital Image"> -->
+                </div>
+            </div>
+            <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
+                <h5 class="sub-title pe-3">About Ignite Digital</h5>
+                <h1 class="display-5 mb-4">Innovate, Ignite & Inspire</h1>
+                <p class="mb-4">Ignite Digital, a brand under Ahmedabad Subha LLP, delivers innovative digital marketing solutions and expert event management services. We help businesses grow with a comprehensive suite of services tailored to enhance their digital presence and engagement.</p>
+                
+                <div class="row gy-4">
+                    <div class="col-sm-6 d-flex align-items-center">
+                        <i class="fas fa-bullhorn fa-3x text-secondary"></i>
+                        <h5 class="ms-4">Social Media Management</h5>
+                    </div>
+                    <div class="col-sm-6 d-flex align-items-center">
+                        <i class="fas fa-search-dollar fa-3x text-secondary"></i>
+                        <h5 class="ms-4">SEO & PPC Advertising</h5>
+                    </div>
+                    <div class="col-sm-6 d-flex align-items-center">
+                        <i class="fas fa-envelope-open-text fa-3x text-secondary"></i>
+                        <h5 class="ms-4">Email Marketing</h5>
+                    </div>
+                    <div class="col-sm-6 d-flex align-items-center">
+                        <i class="fas fa-chart-line fa-3x text-secondary"></i>
+                        <h5 class="ms-4">Analytics & Reporting</h5>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <p class="text-primary h6 mb-2"><i class="fa fa-check-circle text-secondary me-2"></i> 30+ Custom Posts Per Month</p>
+                    <p class="text-primary h6 mb-2"><i class="fa fa-check-circle text-secondary me-2"></i> Retargeted Ad Campaigns</p>
+                    <p class="text-primary h6 mb-2"><i class="fa fa-check-circle text-secondary me-2"></i> Creative Content & Branding</p>
+                </div>
+
+                <div class="d-flex align-items-center mt-4">
+                    <a href="https://www.ignitedigitals.co.in/" target="_blank" class="btn btn-primary rounded-pill px-4 py-2 me-3">
+                        Visit Our Website
+                    </a>
+                    <!-- <img src="img/ignite logo1.jpeg" alt="Ignite Digital Logo" style="height: 50px;"> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+       <!-- Footer Start -->
+<div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <!-- Contact Info -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-secondary mb-4">Contact Info</h4>
+                    <a href="#"><i class="fa fa-map-marker-alt me-2"></i> 614,City Center 2, Science City Rd, Sola, Ahmedabad, Gujarat 380060</a>
+                    <!-- <a href="#"><i class="fas fa-envelope me-2"></i> info@example.com</a> -->
+                    <a href="#"><i class="fas fa-phone me-2"></i> +9163522 00343</a>
+                    <!-- <a href="#"><i class="fas fa-print me-2"></i> +012 345 67890</a> -->
+                    <div class="d-flex align-items-center mt-3">
+                        <i class="fas fa-share fa-2x text-secondary me-2"></i>
+                        <!-- <a class="btn mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn mx-1" href="#"><i class="fab fa-twitter"></i></a> -->
+                         <a class="btn mx-1" href="https://www.instagram.com/ahmedabadsubhallp/"><i class="fab fa-instagram"></i></a>
+                        <!-- <a class="btn mx-1" href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Useful Links -->
+            <div class="col-md-6 col-lg-4 col-xl-2">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-secondary mb-4">Useful Links</h4>
+                    <a href="{% url 'home' %}"><i class="fas fa-angle-right me-2"></i> Home</a>
+                    <!-- <a href="#"><i class="fas fa-angle-right me-2"></i> About</a>
+                    <a href="#"><i class="fas fa-angle-right me-2"></i> Services</a>
+                    <a href="#"><i class="fas fa-angle-right me-2"></i> Brand</a>
+                    <a href="#"><i class="fas fa-angle-right me-2"></i> Contact Us</a> -->
+                </div>
+            </div>
+
+            <!-- Policies & Support -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-secondary mb-4">Policies & Support</h4>
+                    <a href="{% url 'uploaded' %}"><i class="fas fa-angle-right me-2"></i> E-News</a>
+                    <a href="{% url 'privacy_policy' %}"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                    <a href="{% url 'terms_and_condition' %}"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                    <!-- <a href="#"><i class="fas fa-angle-right me-2"></i> FAQs</a> -->
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="col-md-6 col-lg-6 col-xl-4">
+                <div class="footer-item">
+                    <h4 class="text-secondary mb-4">Newsletter</h4>
+                    <p class="text-white mb-3">Stay updated with the latest news and services. Subscribe now!</p>
+                    <div class="position-relative mx-auto rounded-pill">
+                        <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+                        <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="text-center mt-5">
+            <img src="{% static 'img/AL.png' %}" alt="Ahmedabad Subah LLP Logo" style="height: 50px;" class="mb-2">
+            <h5 class="text-white mb-1">Ahmedabad Subah LLP</h5>
+            <p class="text-white mb-0">Your trusted partner in innovative solutions.</p>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+        <!-- Copyright Start -->
+       <div class="container-fluid copyright py-4">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-md-0">
+                <span class="text-white">
+                    <a href="#" class="border-bottom text-white">
+                        <i class="fas fa-copyright text-light me-2"></i>
+                        Ahmedabad Subha LLP
+                    </a>, All rights reserved.
+                </span>
+            </div>
+            <div class="col-md-6 text-center text-md-end text-white">
+                Designed & Developed by 
+                <a class="border-bottom text-white" href="#">Ahmedabad Subha LLP</a>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+    <!-- JavaScript Libraries -->
+  <!-- External Libraries (CDN) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Local JS Libraries -->
+<script src="{% static 'lib/wow/wow.min.js' %}"></script>
+<script src="{% static 'lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+<!-- Main JS -->
+<script src="{% static 'js/main.js' %}"></script>
+
+    </body>
+</html>

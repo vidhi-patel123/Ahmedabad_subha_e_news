@@ -1,0 +1,1183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Ahmedabad Subha LLP</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <link rel="icon" href="{% static 'img/AL.png' %}" type="image/x-icon">
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+     <!-- Libraries Stylesheet -->
+<link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+<link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css">
+
+<!-- Font Awesome (CDN) -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-dRgVRxYrhQ3vMiKT4wrq2bctu1+ZdzzwXBtJSRZoF3kkKxHvSRt6R6ZKPXhtTVAYfwxGxXdGh9d9vIvZ2zNw0A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+<!-- Template Stylesheet -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+      
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Topbar Start -->
+        <div class="container-fluid bg-primary px-5 d-none d-lg-block">
+            <div class="row gx-0 align-items-center">
+                <div class="col-lg-5 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex">
+                        <!-- <a href="#" class="text-muted me-4"><i class="fas fa-envelope text-secondary me-2"></i>Example@gmail.com</a>
+                        <a href="#" class="text-muted me-0"><i class="fas fa-phone-alt text-secondary me-2"></i>+01234567890</a> -->
+                    </div>
+                </div>
+                <div class="col-lg-3 row-cols-1 text-center mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center" style="height: 45px;">
+                        <!-- <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal text-secondary"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal text-secondary"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal text-secondary"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal text-secondary"></i></a>
+                        <a class="btn btn-sm btn-outline-light btn-square rounded-circle" href=""><i class="fab fa-youtube fw-normal text-secondary"></i></a> -->
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-inline-flex align-items-center" style="height: 45px;">
+                        <!-- <a href="#" class="text-muted me-2"> Help</a><small> / </small>
+                        <a href="#" class="text-muted mx-2"> Support</a><small> / </small>
+                        <a href="#" class="text-muted ms-2"> Contact</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid nav-bar p-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                   <h1 class="h4 text-secondary m-0">
+                        <img src="{% static 'img/AL.png' %}" class="img-fluid" alt="">
+                           Ahmedabad Subha LLP
+                    </h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="#home" class="nav-item nav-link active">Home</a>
+                        <a href="#about" class="nav-item nav-link">About</a>
+                        <a href="#service" class="nav-item nav-link">Service</a>
+                        <a href="#brands" class="nav-item nav-link">Brands</a>
+                        <a href="#faqs" class="nav-item nav-link">FAQs</a>
+                        <a href="{% url 'uploaded' %}" class="nav-item nav-link">E-News</a>
+                       
+                        <a href="#contact" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Carousel Start -->
+     <section class="carousel-header" id="home">
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <img src="{% static 'img/carousel-1.jpg' %}"  class="img-fluid" alt="Image">
+                <div class="carousel-caption">
+                    <div class="text-center p-4" style="max-width: 900px;">
+                        <h2 class="text-white text-uppercase fw-bold mb-3">WELCOME TO Ahmedabad Subha LLP</h2>
+                        <p class="text-white fs-5 mb-3">Inspiring Progress through Research, Strategy, and Technology</p>
+                        <hr class="bg-white mx-auto" style="width: 60px; height: 2px;">
+                        <p class="text-white mb-4">
+                            A dynamic firm offering a comprehensive suite of services in media, 
+                            IT Solutions, social networking, and academics. Our services span across media creation, digital 
+                            marketing, social networking, and academic consulting, ensuring a comprehensive approach to growth. 
+                            Partner with us to create compelling media content, drive impactful digital campaigns, enhance your social 
+                            presence, and achieve academic success. Let's build a brighter digital future together.
+                        </p>
+                        <a href="#aboutus" class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img src="{% static 'img/carousel-2.jpg' %}" class="img-fluid" alt="Image">
+                <div class="carousel-caption">
+                    <div class="text-center p-4" style="max-width: 900px;">
+                        <h2 class="text-white text-uppercase fw-bold mb-3">What We Offer</h2>
+                        <hr class="bg-white mx-auto" style="width: 60px; height: 2px;">
+                        <p class="text-white mb-2">Comprehensive Services: Offer a wide range of services including media, digital marketing, social networking, and academics, making them a one-stop solution for various needs.</p>
+                        <p class="text-white mb-2">Expertise: With a team of experienced professionals, they bring a wealth of knowledge and skills to the table.</p>
+                        <p class="text-white mb-2">Innovative Approach: Our innovative strategies in digital marketing and media can help businesses stand out in a competitive market.</p>
+                        <p class="text-white mb-4">Academic Support: Our focus on academics provides valuable insights and support for educational institutions and students.</p>
+                        <a href="#service" class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <img src="{% static 'img/carousel-3.jpg' %}" class="img-fluid" alt="Image">
+                <div class="carousel-caption">
+                    <div class="text-center p-4" style="max-width: 900px;">
+                        <h2 class="text-white text-uppercase fw-bold mb-3">Why Choose Us?</h2>
+                        <hr class="bg-white mx-auto" style="width: 60px; height: 2px;">
+                        <p class="text-white mb-4">Choosing Ahmedabad Subha LLP means choosing a partner committed to innovation, excellence, and results. Our expertise ensures that your vision is transformed into measurable success.</p>
+                        <a href="#service" class="btn btn-primary border-secondary rounded-pill text-white py-3 px-5">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-secondary" aria-hidden="true"></span>
+            <span class="visually-hidden-focusable">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-secondary" aria-hidden="true"></span>
+            <span class="visually-hidden-focusable">Next</span>
+        </button>
+    </div>
+     </section>
+        <!-- Carousel End -->
+
+        <!-- About Start -->
+        <section class="container-fluid py-5" id="about">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.1s">
+                        <div class="bg-light rounded">
+                            <img src="{% static 'img/about us1.jpg' %}" class="img-fluid w-100" style="margin-bottom: -7px;" alt="Image">
+                            <img src="{% static 'img/about us.jpg' %}" class="img-fluid w-100 border-bottom border-5 border-primary" style="border-top-right-radius: 300px; border-top-left-radius: 300px;" alt="Image">
+                        </div>
+                    </div>
+                 <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.3s">
+                      <h5 class="sub-title pe-3">About the Company</h5>
+                     <h1 class="display-5 mb-4">Your Trusted Partner in Media, Marketing, Events & Academic Solutions</h1>
+
+
+    <!-- Nav Tabs -->
+    <ul class="nav nav-tabs mb-4" id="aboutTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true">About</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="media-tab" data-bs-toggle="tab" data-bs-target="#media" type="button" role="tab" aria-controls="media" aria-selected="false">Media</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission" type="button" role="tab" aria-controls="mission" aria-selected="false">Mission & Vision</button>
+        </li>
+    </ul>
+
+    <!-- Tab Panes -->
+    <div class="tab-content" id="aboutTabsContent">
+        <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
+            <p class="mb-3">
+                Ahmedabad Subha LLP is a distinguished parent company specializing in media, marketing, event management, and academic support services. Our multifaceted approach ensures that we cater to a diverse range of needs with utmost precision and excellence.
+            </p>
+            <p class="mb-3">
+                With our expertise in media, marketing, events, and academic support services, Ahmedabad Subha LLP is your one-stop solution for all your business and academic needs. Partner with us to unlock your potential and achieve your goals.
+            </p>
+        </div>
+        <div class="tab-pane fade" id="media" role="tabpanel" aria-labelledby="media-tab">
+            <p class="mb-3">
+                We provide comprehensive media services, including news updates and publications. Our team is dedicated to delivering timely and accurate news coverage across various platforms. We also specialize in creating and managing publications that inform and engage our audience.
+            </p>
+            <p class="mb-3">
+                Whether it's digital, print, or multimedia, we ensure the highest standards of journalism and communication.
+            </p>
+        </div>
+        <div class="tab-pane fade" id="mission" role="tabpanel" aria-labelledby="mission-tab">
+            <h4 class="text-primary">Mission Statement</h4>
+            <p class="mb-3">
+                "To empower businesses by providing innovative solutions that drive growth, ensure timely updates, facilitate strategic upgradation, and support in academic and research excellence."
+            </p>
+            <p class="mb-3">
+                We are dedicated to enhancing efficiency and fostering development, enabling our clients to thrive in a dynamic market.
+            </p>
+            <h4 class="text-primary mt-4">Vision Statement</h4>
+            <p>
+                "To be the trusted partner for businesses and individuals seeking continuous growth and improvement that leads to new heights of success."
+            </p>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </section>
+        <!-- About End -->
+
+
+        <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="sub-style">
+                <h5 class="sub-title text-primary px-3">OUR Journey</h5>
+            </div>
+                <h1 class="display-5 mb-4">Welcome to our story — what began as a simple idea has grown into a thriving community.</h1>
+            </div>
+        <section class="timeline-scroll-wrapper">
+            <div class="timeline-line"></div>
+            <div class="timeline-container">
+                <!-- Top Item -->
+                <div class="timeline-item top">
+                    <div class="content">
+                        <h3>The Beginning</h3>
+                        <p>It all started with a vision to make a difference. We faced numerous challenges and obstacles, but our determination and hard work kept us going. Each step of the way, we learned, adapted, and evolved.</p>
+                    </div>
+                    <div class="dot-line"></div>
+                    <div class="dot"></div>
+                    <div class="year">
+                         <img src="{% static 'img/begining.jpg' %}" alt="Beginning Logo" style="height: 70px;">
+                    </div>
+                </div>
+
+                <!-- Bottom Item -->
+                <div class="timeline-item bottom">
+                    <div class="year">
+                        <img src="{% static 'img/growth.jpg' %}" alt="Beginning Logo" style="height: 70px;">
+                    </div>
+                    <div class="dot"></div>
+                    <div class="dot-line"></div>
+                    <div class="content">
+                        <h3>Growth and Expansion</h3>
+                        <p>As we continued to grow, we expanded our team and our reach. We embraced new opportunities and innovations, always staying true to our core values.</p>
+                    </div>
+                </div>
+
+                <!-- Top Item -->
+                <div class="timeline-item top">
+                    <div class="content">
+                        <h3>Media</h3>
+                        <p>Crafting compelling news, stories and visuals that captivate audiences through our newspaper <strong>Ahmedabad Subah</strong> and its news channel.</p>
+                    </div>
+                    <div class="dot-line"></div>
+                    <div class="dot"></div>
+                    <div class="year">
+                         <img src="{% static 'img/as logo.jpg' %}"  alt="Beginning Logo" style="height: 70px;">
+                    </div>
+                </div>
+
+                <!-- Bottom Item -->
+                <div class="timeline-item bottom">
+                    <div class="year">
+                         <img src="{% static 'img/sersimg.jpeg' %}" alt="Academics" style="height: 70px;"/>
+                    </div>
+                    <div class="dot"></div>
+                    <div class="dot-line"></div>
+                    <div class="content">
+                        <h3>Academic Consultancy & Research</h3>
+                        <p><strong>Scientific and Engineering Research Society (SERS)</strong> publishes a series of international journals, conducts conferences, workshops, and webinars. It's a huge network of researchers and academicians.</p>
+                    </div>
+                </div>
+
+                <!-- Top Item -->
+                <div class="timeline-item top">
+                    <div class="content">
+                        <h3>Social Networking</h3>
+                        <p>Leveraging the power of social media to connect and engage with our community and business through <strong>Trendings around</strong>.</p>
+                    </div>
+                    <div class="dot-line"></div>
+                    <div class="dot"></div>
+                    <div class="year">
+                        <img src="{% static 'img/logo.png' %}" alt="Academics" style="height: 70px;"/>
+                    </div>
+                </div>
+
+                <!-- Bottom Item -->
+                <div class="timeline-item bottom">
+                    <div class="year">
+                        <img src="{% static 'img/ignite logo1.jpeg' %}" alt="Academics" style="height: 70px;"/>
+                    </div>
+                    <div class="dot"></div>
+                    <div class="dot-line"></div>
+                    <div class="content">
+                        <h3>Advertisement & Event Management</h3>
+                        <p>Creating impactful campaigns that resonate with our target audience and organizing memorable events through our initiative <strong>Ignite Digital</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Top Item -->
+                <div class="timeline-item top">
+                    <div class="content">
+                        <h3>Academic & Vocational Courses</h3>
+                        <p>Offering practical and skill-based courses to empower individuals and enhance their career prospects through <strong>Birch Academia</strong>.</p>
+                    </div>
+                    <div class="dot-line"></div>
+                    <div class="dot"></div>
+                    <div class="year">
+                         <img src="{% static 'img/birch-academia-logo.jpg' %}" alt="Academics" style="height: 70px;"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="content-section">
+            <h2>Looking Ahead</h2>
+            <h3>Future Vision</h3>
+            <p>The future is bright, and we are excited about what lies ahead. We are committed to continuing our journey with the same passion and dedication that has brought us this far. From the early days of brainstorming and planning, we have grown into a thriving community.</p>
+            
+            <h3>Our Mission</h3>
+            <p>Our mission has always been to create something meaningful and impactful, and we are proud of how far we have come. We continue to strengthen relations and build bridges across different domains and communities.</p>
+        </div>
+
+        <!-- <div class="cta-section">
+            <h2>Join Our Journey</h2>
+            <p>Thank you for being a part of our story. Together, we will achieve great things.</p>
+            <a href="#" class="cta-button">Get Started</a>
+        </div> -->
+    </div>
+
+          <!-- Features Start -->
+        <section class="container-fluid features overflow-hidden py-5" id="service">
+            <div class="container">
+                <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="sub-style">
+                        <h5 class="sub-title text-primary px-3">OUR VALUES</h5>
+                    </div>
+                    <h1 class="display-5 mb-4">  Delivering excellence through innovation and customer-focused solutions</h1>
+                    <!-- <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p> -->
+                </div>
+                <div class="row g-4 justify-content-center text-center">
+                     <!-- INNOVATION -->
+      <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="feature-item text-center p-4">
+          <div class="feature-icon p-3 mb-4">
+            <i class="fas fa-cogs fa-3x text-primary"></i>
+          </div>
+          <h5 class="mb-3">INNOVATION</h5>
+          <p>Continuously seeking and implementing creative solutions to stay ahead in the industry.</p>
+        </div>
+      </div>
+
+      <!-- EXCELLENCE -->
+      <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+        <div class="feature-item text-center p-4">
+          <div class="feature-icon p-3 mb-4">
+            <i class="fa fa-star fa-3x text-primary"></i>
+          </div>
+          <h5 class="mb-3">EXCELLENCE</h5>
+          <p>Striving for the highest standards in all our services and products.</p>
+        </div>
+      </div>
+
+      <!-- INTEGRITY -->
+      <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="feature-item text-center p-4">
+          <div class="feature-icon p-3 mb-4">
+            <i class="fas fa-balance-scale fa-3x text-primary"></i>
+          </div>
+          <h5 class="mb-3">INTEGRITY</h5>
+          <p>Conducting business with honesty, transparency, and ethical practices.</p>
+        </div>
+      </div>
+
+      <!-- CUSTOMER FOCUS -->
+      <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+        <div class="feature-item text-center p-4">
+          <div class="feature-icon p-3 mb-4">
+            <i class="fa fa-users fa-3x text-primary"></i>
+          </div>
+          <h5 class="mb-3">CUSTOMER FOCUS</h5>
+          <p>Prioritizing the needs and satisfaction of our clients in every project.</p>
+        </div>
+      </div>
+
+      <!-- COLLABORATION -->
+      <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="feature-item text-center p-4">
+          <div class="feature-icon p-3 mb-4">
+            <i class="fas fa-handshake fa-3x text-primary"></i>
+          </div>
+          <h5 class="mb-3">COLLABORATION</h5>
+          <p>Fostering a team-oriented environment that values diverse perspectives and teamwork.</p>
+        </div>
+      </div>
+
+      <!-- CONTINUOUS IMPROVEMENT -->
+      <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+        <div class="feature-item text-center p-4">
+          <div class="feature-icon p-3 mb-4">
+            <i class="fas fa-sync-alt  fa-3x text-primary"></i>
+          </div>
+          <h5 class="mb-3">CONTINUOUS IMPROVEMENT</h5>
+          <p>Committing to ongoing learning, development, and service enhancement.</p>
+        </div>
+      </div>
+
+      <!-- SUSTAINABILITY -->
+      <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+        <div class="feature-item text-center p-4">
+          <div class="feature-icon p-3 mb-4">
+            <i class="fa fa-leaf fa-3x text-primary"></i>
+          </div>
+          <h5 class="mb-3">SUSTAINABILITY</h5>
+          <p>Promoting environmentally responsible practices in all areas of business.</p>
+        </div>
+      </div>
+
+      <!-- EMPOWERMENT -->
+      <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+        <div class="feature-item text-center p-4">
+          <div class="feature-icon p-3 mb-4">
+            <i class="fa fa-rocket fa-3x text-primary"></i>
+          </div>
+          <h5 class="mb-3">EMPOWERMENT</h5>
+          <p>Supporting the growth and development of our clients, team, and community.</p>
+        </div>
+      </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- Features End -->
+
+        <!-- Contact Start -->
+     <div class="particles" id="particles"></div>
+
+    <section class="container-fluid contact overflow-hidden pb-5" id="brands">
+        <div class="container py-5">
+            <div class="office pt-5">
+                <div class="section-title text-center mb-5">
+                    <div class="sub-style">
+                        <h5 class="sub-title text-primary px-3">Our Brands</h5>
+                    </div>
+                    <h1 class="display-5 mb-4">
+                        Discover the innovative brands that are reshaping industries and creating lasting impact.
+                    </h1>
+                </div>
+
+                <!-- BEGIN: Brand Slider -->
+                <div class="slider-container">
+                    <div class="slides" id="slides">
+
+                        <!-- Slide 1: Ignite Digital -->
+                        <div class="slide">
+                            <div class="image-container">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop" alt="Ignite Digital">
+                            </div>
+                            <div class="content-overlay">
+                                <div class="brand-icon">
+                                    <img src="{% static 'img/ignite logo1.jpeg' %}" alt="Ignite Digital Logo" class="icon-image">
+                                </div>
+                                <h2 class="brand-title">Ignite Digital & Events</h2>
+                                <p class="brand-description">
+                                    A powerhouse in digital marketing and event management, revolutionizing how brands connect with their audience.
+                                </p>
+                               <a href="{% url 'ignite-digital' %}" class="read-more-btn" target="_blank">Read More About Ignite Digital</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Trending Around -->
+                        <div class="slide">
+                            <div class="image-container">
+                                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=600&fit=crop" alt="Trending Around">
+                            </div>
+                            <div class="content-overlay">
+                                <div class="brand-icon">
+                                    <img src="{% static 'img/logo.png' %}" alt="Trending Around Logo" class="icon-image">
+                                </div>
+                                <h2 class="brand-title">Trending Around</h2>
+                                <p class="brand-description">
+                                    A super app merging jobs, events, local business listings, and more — empowering local communities.
+                                </p>
+                                <a href="{% url 'trending-around' %}" class="read-more-btn">Read More About Trending Around</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: Birch Academia -->
+                        <div class="slide">
+                            <div class="image-container">
+                                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&h=600&fit=crop" alt="Birch Academia">
+                                <div class="coming-soon-tag">Coming Soon</div>
+                            </div>
+                            <div class="content-overlay">
+                                <div class="brand-icon">
+                                    <img src="{% static 'img/birch-academia-logo.jpg' %}" alt="Birch Academia Logo" class="icon-image">
+                                </div>
+                                <h2 class="brand-title">Birch Academia</h2>
+                                <p class="brand-description">
+                                    Empowering academic excellence through comprehensive support and innovative learning solutions.
+                                </p>
+                                <a href="{% url 'birch-academia' %}" class="read-more-btn">Read More About Birch Academia</a>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4: Ahmedabad Subah -->
+                        <div class="slide">
+                            <div class="image-container">
+                                <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200&h=600&fit=crop" alt="Ahmedabad Subah">
+                            </div>
+                            <div class="content-overlay">
+                                <!-- <div class="brand-icon"> -->
+                                    <div class="year">
+                         <img src="{% static 'img/as logo.jpg' %}"  alt="Beginning Logo" style="height: 70px;">
+                    </div>
+                                <!-- </div> -->
+                                <h2 class="brand-title">Ahmedabad Subah</h2>
+                                <p class="brand-description">
+                                    Leading news media platform delivering authentic and impactful journalism through print and digital channels.
+                                </p>
+                               <a href="{% url 'ahmedabad-subah' %}" class="read-more-btn">Read More About Ahmedabad Subah</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="nav-buttons">
+                        <button class="nav-button prev" id="prevBtn">←</button>
+                        <button class="nav-button next" id="nextBtn">→</button>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+                <!-- END: Brand Slider -->
+            </div>
+        </div>
+    </section>
+
+<!-- AOS Animation Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true,
+    offset: 100
+  });
+</script>
+
+ <section class="container-fluid features overflow-hidden py-5" id="faqs">
+            <div class="container">
+                <div class="section-title text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="sub-style">
+                        <h5 class="sub-title text-primary px-3">Frequently Asked Questions</h5>
+                    </div>
+                    <h1 class="display-5 mb-4">  Delivering excellence through innovation and customer-focused solutions</h1>
+                    <!-- <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!</p> -->
+                </div>
+                <div class="row g-4 justify-content-center text-center">
+                  <div class="faq-container">
+    <!-- General Questions -->
+    <div class="faq-category" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="category-title">General Questions</h3>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What services does Ahmedabad Subha LLP offer?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Ahmedabad Subha LLP specializes in media, social media management, digital marketing, event management and academic support services.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How can I contact Ahmedabad Subha LLP?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>You can reach us via email at ahmedabadsubhallp@gmail.com or can do live chat from the website.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What industries do you serve?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We serve a wide range of industries including education, entertainment, corporate sectors, and many more.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Media Solutions -->
+    <div class="faq-category" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="category-title">Media Solutions</h3>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What types of media solutions do you provide?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We provide comprehensive media services, including news updates and publications. Our team is dedicated to delivering timely and accurate news coverage across various platforms. We also specialize in creating and managing publications that inform and engage our audience. Whether it's digital, print, or multimedia, we ensure the highest standards of journalism and communication.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How can I stay updated with your media content?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>You can subscribe to our newspaper, e paper, and newsletter, follow us on social media platforms, or visit our website regularly for updates.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Marketing Services -->
+    <div class="faq-category" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="category-title">Marketing Services</h3>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What digital marketing services do you offer?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <ul>
+                    <li>Digital marketing campaigns</li>
+                    <li>Search Engine Optimization (SEO)</li>
+                    <li>Pay-Per-Click (PPC) advertising</li>
+                    <li>Social media marketing</li>
+                    <li>Brand development and positioning</li>
+                </ul>
+                <p>With a data-driven approach, we ensure your marketing efforts yield measurable results.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How can digital marketing benefit my business?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Digital marketing can help increase your online presence, attract more customers, and drive sales through targeted campaigns and strategies.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Management Services -->
+    <div class="faq-category" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="category-title">Event Management Services</h3>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What Event Management services do you offer?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We bring your vision to life with our expert event management services. From corporate events and conferences to product launches and social gatherings, we handle every detail meticulously to ensure a seamless experience. Our services include:</p>
+                <ul>
+                    <li>Event planning and coordination</li>
+                    <li>Venue selection and logistics</li>
+                    <li>Audio-visual production</li>
+                    <li>Catering and hospitality</li>
+                    <li>Post-event analysis and feedback</li>
+                </ul>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What types of events do you manage?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We manage a variety of events including corporate events, conferences, product launches, social gatherings, and more.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How can I book your event management services?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>You can contact us via email or phone to discuss your event requirements or can fill up the interest form and we will provide a customized plan for your event.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Academic Support Services -->
+    <div class="faq-category" data-aos="fade-up" data-aos-delay="500">
+        <h3 class="category-title">Academic Support Services</h3>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What academic support services do you provide?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We provide a range of academic support services tailored to meet the needs of students, educators, and institutions. Our offerings include:</p>
+                <ul>
+                    <li>Academic tutoring and mentoring</li>
+                    <li>Curriculum development</li>
+                    <li>Educational workshops and seminars</li>
+                    <li>Online learning platforms and resources</li>
+                    <li>Support in project proposal, dissertations, thesis writing etc.</li>
+                    <li>Research assistance and publication support</li>
+                    <li>Submission of proposals and PPR for the Institutions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy and Terms -->
+    <div class="faq-category" data-aos="fade-up" data-aos-delay="600">
+        <h3 class="category-title">Privacy and Terms</h3>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How is my personal information protected?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We take your privacy seriously and implement robust security measures to protect your personal information. Please refer to our Privacy Policy for more details.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What are the terms of service for using your website and services?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Our Terms of Service outline the rules and regulations for using our website and services. You can read the full terms on our website.</p>
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </section>
+
+           <!-- Contact Start -->
+     <section class="container-fluid contact overflow-hidden py-5" id="contact">
+    <div class="container py-5">
+        <div class="row g-5 mb-5">
+            <!-- Contact Info -->
+            <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                <div class="sub-style">
+                    <h5 class="sub-title text-primary pe-3">Get in Touch</h5>
+                </div>
+                <h1 class="display-5 mb-4">We're Here to Help — Contact Ahmedabad Subha LLP</h1>
+                <p class="mb-5">
+                    Whether you're looking for media collaboration, digital marketing, academic support, or event services — we’d love to hear from you. Our team is always ready to help you take the next big step.
+                </p>
+
+                <!-- Location -->
+                <div class="d-flex border-bottom mb-4 pb-4">
+                    <i class="fas fa-map-marked-alt fa-4x text-primary bg-light p-3 rounded"></i>
+                    <div class="ps-3">
+                        <h5>Office Location</h5>
+                        <p>614, City Center 2, Science City Road, Sola, Ahmedabad, Gujarat 380060</p>
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <!-- Contact -->
+                    <div class="col-xl-6">
+                        <div class="d-flex">
+                            <i class="fas fa-phone-alt fa-3x text-primary"></i>
+                            <div class="ps-3">
+                                <h5 class="mb-3">Call Us</h5>
+                                <p class="mb-0">Phone:</p>
+                                <a href="tel:+916352200343" class="fs-5 text-primary">+91 63522 00343</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Working Hours -->
+                    <div class="col-xl-6">
+                        <div class="d-flex">
+                            <i class="fas fa-clock fa-3x text-primary"></i>
+                            <div class="ps-3">
+                                <h5 class="mb-3">Working Hours</h5>
+                                <p class="mb-0">Mon - Fri:</p>
+                                <a href="#" class="fs-5 text-primary">09:30 AM - 06:30 PM</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social -->
+                <div class="d-flex align-items-center pt-4">
+                    <div class="me-4">
+                        <div class="bg-light d-flex align-items-center justify-content-center" style="width: 90px; height: 90px; border-radius: 10px;">
+                            <i class="fas fa-share-alt fa-3x text-primary"></i>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap">
+                        <a class="btn btn-secondary border-secondary mx-2 p-0" href="https://www.instagram.com/ahmedabadsubhallp/" target="_blank">
+                            Instagram <i class="fas fa-chevron-circle-right ms-1"></i>
+                        </a>
+                        <!-- Add more social links if available -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3">
+                <div class="sub-style">
+                    <h5 class="sub-title text-primary pe-3">Let’s Connect</h5>
+                </div>
+                <h1 class="display-5 mb-4">Send Us a Message</h1>
+                <p class="mb-3">
+                    Got a project or query? Fill out the form below and our team will get in touch with you shortly. We look forward to collaborating with you.
+                </p>
+                <form method="POST" action="#home">
+                    {% csrf_token %}
+                    <div class="row g-4">
+                        <div class="col-lg-12 col-xl-6">
+                            <div class="form-floating">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                <label for="name">Your Name</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-xl-6">
+                            <div class="form-floating">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
+                                <label for="email">Your Email</label>
+                            </div>
+                        </div>
+                        {% comment %} <div class="col-lg-12 col-xl-6">
+                            <div class="form-floating">
+                                <input type="text" name="phone" class="form-control" id="phone" placeholder="Your Phone">
+                                <label for="phone">Your Phone</label>
+                            </div>
+                        </div> {% endcomment %}
+                        {% comment %} <div class="col-lg-12 col-xl-6">
+                            <div class="form-floating">
+                                <input type="text" name="project" class="form-control" id="project" placeholder="Your Project">
+                                <label for="project">Your Project</label>
+                            </div>
+                        </div> {% endcomment %}
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject">
+                                <label for="subject">Subject</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea name="message" class="form-control" placeholder="Leave a message here" id="message" style="height: 160px" required></textarea>
+                                <label for="message">Message</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Embedded Map -->
+        <div class="office">
+            <div class="col-12 wow zoomIn" data-wow-delay="0.1s">
+                <div class="rounded h-100">
+                    <iframe class="rounded w-100" style="height: 500px;"
+                        src="https://maps.google.com/maps?q=City%20Center%202,%20Science%20City%20Rd,%20Sola,%20Ahmedabad,%20Gujarat&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        </div>
+        <!-- Contact End -->
+
+       <!-- Footer Start -->
+<div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <!-- Contact Info -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-secondary mb-4">Contact Info</h4>
+                    <a href="#"><i class="fa fa-map-marker-alt me-2"></i> 614,City Center 2, Science City Rd, Sola, Ahmedabad, Gujarat 380060</a>
+                    <!-- <a href="#"><i class="fas fa-envelope me-2"></i> info@example.com</a> -->
+                    <a href="#"><i class="fas fa-phone me-2"></i> +9163522 00343</a>
+                    <!-- <a href="#"><i class="fas fa-print me-2"></i> +012 345 67890</a> -->
+                    <div class="d-flex align-items-center mt-3">
+                        <i class="fas fa-share fa-2x text-secondary me-2"></i>
+                        <!-- <a class="btn mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn mx-1" href="#"><i class="fab fa-twitter"></i></a> -->
+                        <a class="btn mx-1" href="https://www.instagram.com/ahmedabadsubhallp/"><i class="fab fa-instagram"></i></a>
+                        <!-- <a class="btn mx-1" href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Useful Links -->
+            <div class="col-md-6 col-lg-4 col-xl-2">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-secondary mb-4">Useful Links</h4>
+                    <a href="#home"><i class="fas fa-angle-right me-2"></i> Home</a>
+                    <a href="#about"><i class="fas fa-angle-right me-2"></i> About</a>
+                    <a href="#service"><i class="fas fa-angle-right me-2"></i> Services</a>
+                    <a href="#brands"><i class="fas fa-angle-right me-2"></i> Brand</a>
+                    <a href="#contact"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+                </div>
+            </div>
+
+            <!-- Policies & Support -->
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="text-secondary mb-4">Policies & Support</h4>
+                    <a href="{% url 'uploaded' %}"><i class="fas fa-angle-right me-2"></i> E-News</a>
+                    <a href="{% url 'privacy_policy' %}"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                    <a href="{% url 'terms_and_condition' %}"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                    <a href="#faqs"><i class="fas fa-angle-right me-2"></i> FAQs</a>
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="col-md-6 col-lg-6 col-xl-4">
+                <div class="footer-item">
+                    <h4 class="text-secondary mb-4">Newsletter</h4>
+                    <p class="text-white mb-3">Stay updated with the latest news and services. Subscribe now!</p>
+                    <div class="position-relative mx-auto rounded-pill">
+                        <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+                        <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="text-center mt-5">
+            <img src="{% static 'img/AL.png' %}"  alt="Ahmedabad Subah LLP Logo" style="height: 50px;" class="mb-2">
+            <h5 class="text-white mb-1">Ahmedabad Subah LLP</h5>
+            <p class="text-white mb-0">Your trusted partner in innovative solutions.</p>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-md-0">
+                <span class="text-white">
+                    <a href="#" class="border-bottom text-white">
+                        <i class="fas fa-copyright text-light me-2"></i>
+                        Ahmedabad Subha LLP
+                    </a>, All rights reserved.
+                </span>
+            </div>
+            <div class="col-md-6 text-center text-md-end text-white">
+                Designed & Developed by 
+                <a class="border-bottom text-white" href="#">Ahmedabad Subha LLP</a>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+    <!-- JavaScript Libraries -->
+  <!-- External Libraries (CDN) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Local JS Libraries -->
+<script src="{% static 'lib/wow/wow.min.js' %}"></script>
+<script src="{% static 'lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+<!-- Main JS -->
+<script src="{% static 'js/main.js' %}"></script>
+
+
+    
+ <script>
+    // --- Particle Animation ---
+    function createParticles() {
+        const particles = document.getElementById('particles');
+        if (!particles) return;
+
+        for (let i = 0; i < 50; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = `${Math.random() * 100}%`;
+            p.style.top = `${Math.random() * 100}%`;
+            p.style.animationDelay = `${Math.random() * 6}s`;
+            p.style.animationDuration = `${3 + Math.random() * 3}s`;
+            particles.appendChild(p);
+        }
+    }
+
+    // --- Slider Functionality ---
+    class ModernSlider {
+        constructor() {
+            this.slides = document.getElementById('slides');
+            this.slideElements = this.slides?.querySelectorAll('.slide') || [];
+            this.totalSlides = this.slideElements.length;
+            this.currentSlide = 0;
+            this.isAnimating = false;
+
+            this.init();
+        }
+
+        init() {
+            if (!this.slides || this.totalSlides === 0) return;
+            this.bindEvents();
+            this.startAutoSlide();
+            this.updateProgress();
+        }
+
+        bindEvents() {
+            document.getElementById('prevBtn')?.addEventListener('click', () => this.previousSlide());
+            document.getElementById('nextBtn')?.addEventListener('click', () => this.nextSlide());
+
+            document.addEventListener('keydown', e => {
+                if (e.key === 'ArrowLeft') this.previousSlide();
+                if (e.key === 'ArrowRight') this.nextSlide();
+            });
+
+            let startX = 0;
+            this.slides.addEventListener('touchstart', e => {
+                startX = e.touches[0].clientX;
+            });
+
+            this.slides.addEventListener('touchend', e => {
+                const endX = e.changedTouches[0].clientX;
+                if (startX - endX > 50) this.nextSlide();
+                if (endX - startX > 50) this.previousSlide();
+            });
+        }
+
+        goToSlide(index) {
+            if (this.isAnimating || index === this.currentSlide) return;
+            this.isAnimating = true;
+            this.currentSlide = index;
+            this.slides.style.transform = `translateX(-${index * 100}%)`;
+            this.updateProgress();
+            setTimeout(() => this.isAnimating = false, 800);
+        }
+
+        nextSlide() {
+            const nextIndex = (this.currentSlide + 1) % this.totalSlides;
+            this.goToSlide(nextIndex);
+        }
+
+        previousSlide() {
+            const prevIndex = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+            this.goToSlide(prevIndex);
+        }
+
+        startAutoSlide() {
+            this.autoSlideInterval = setInterval(() => this.nextSlide(), 5000);
+        }
+
+        updateProgress() {
+            const progressFill = document.getElementById('progressFill');
+            if (!progressFill) return;
+            const percent = ((this.currentSlide + 1) / this.totalSlides) * 100;
+            progressFill.style.width = `${percent}%`;
+        }
+    }
+
+    // --- Initialize on Page Load ---
+    document.addEventListener("DOMContentLoaded", () => {
+        createParticles();
+        const slider = new ModernSlider();
+    });
+</script>
+
+<script>
+    const scrollWrapper = document.querySelector('.timeline-scroll-wrapper');
+
+    let scrollAmount = 0;
+    const scrollStep = 2; // pixels per step
+    const scrollDelay = 20; // milliseconds
+    let maxScrollLeft = scrollWrapper.scrollWidth - scrollWrapper.clientWidth;
+
+    function autoScroll() {
+        scrollAmount += scrollStep;
+        if (scrollAmount >= maxScrollLeft) {
+            scrollAmount = maxScrollLeft; // Stop at end
+            return;
+        }
+        scrollWrapper.scrollLeft = scrollAmount;
+        setTimeout(autoScroll, scrollDelay);
+    }
+
+    window.addEventListener('load', () => {
+        setTimeout(autoScroll, 1000); // Delay to allow content to render
+    });
+</script>
+
+<script>
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+  function updateActiveNav() {
+    let scrollY = window.scrollY + 200; // Offset for fixed navbar
+    let currentId = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        currentId = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (currentId && link.getAttribute("href").includes(currentId)) {
+        link.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveNav);
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+    question.addEventListener("click", () => {
+      // Optional: collapse others
+      faqItems.forEach(i => {
+        if (i !== item) i.classList.remove("active");
+      });
+
+      item.classList.toggle("active");
+    });
+  });
+});
+</script>
+    </body>
+
+</html>
